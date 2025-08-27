@@ -63,7 +63,7 @@ services:
     restart: always
     environment:
       - ALLOWED_HOSTS=backend,localhost
-      - CISO_ASSISTANT_URL=https://gracia.mitrakeluarga.com:8443
+      - CISO_ASSISTANT_URL=https://:8443
       - DJANGO_DEBUG=False
       - AUTH_TOKEN_TTL=7200
       - POSTGRES_NAME=ciso_assistant
@@ -93,7 +93,7 @@ services:
       context: /data/compose/ciso-assistant-prod/frontend
     environment:
       - PUBLIC_BACKEND_API_URL=http://backend:8000/api
-      - PUBLIC_BACKEND_API_EXPOSED_URL=https://gracia.mitrakeluarga.com:8443/api
+      - PUBLIC_BACKEND_API_EXPOSED_URL=https://:8443/api
       - PROTOCOL_HEADER=x-forwarded-proto
       - HOST_HEADER=x-forwarded-host
     image: ghcr.io/intuitem/ciso-assistant-community/frontend:latest
@@ -105,7 +105,7 @@ services:
     container_name: caddy
     image: caddy:2.8.4
     environment:
-      - CISO_ASSISTANT_URL=https://gracia.mitrakeluarga.com:8443
+      - CISO_ASSISTANT_URL=https://:8443
     depends_on:
       backend:
         condition: service_healthy
