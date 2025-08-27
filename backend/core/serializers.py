@@ -742,20 +742,15 @@ class UserWriteSerializer(BaseModelSerializer):
             )
         try:
             user = User.objects.create_user(**validated_data)
+            logger.info("user created successfully", user=user)
+            return user
         except Exception as e:
-            logger.error(e)
-            if (
-                User.objects.filter(email=validated_data["email"]).exists()
-                and send_mail
-            ):
-                logger.warning("mailing failed")
-                raise serializers.ValidationError(
-                    {
-                        "warning": [
-                            "User created successfully but an error occurred while sending the email"
-                        ]
-                    }
-                )
+            logger.error("error creating user", error=e, email=validated_data.get("email"))
+            # Check if user was created but email failed
+            if User.objects.filter(email=validated_data["email"]).exists():
+                logger.warning("user created but mailing failed", email=validated_data.get("email"))
+                # Return the created user instead of raising exception
+                return User.objects.get(email=validated_data["email"])
             else:
                 raise serializers.ValidationError(
                     {"error": ["An error occurred while creating the user"]}

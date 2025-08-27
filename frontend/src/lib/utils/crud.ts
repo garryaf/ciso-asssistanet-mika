@@ -284,7 +284,7 @@ export const URL_MODEL_MAP: ModelMap = {
 			},
 			{ field: 'applied_controls', urlModel: 'risk-scenarios', disableAddDeleteButtons: true },
 			{ field: 'applied_controls', urlModel: 'findings', disableAddDeleteButtons: true },
-			{ field: 'applied_controls', urlModel: 'assets', disableAddDeleteButtons: true }
+			{ field: 'applied_controls', urlModel: 'assets', disableAddDeleteButtons: true },
 		],
 		selectFields: [
 			{ field: 'status' },
@@ -930,7 +930,14 @@ export const URL_MODEL_MAP: ModelMap = {
 		localNamePlural: 'findings',
 		verboseName: 'Finding',
 		verboseNamePlural: 'Findings',
-		foreignKeyFields: [{ field: 'findings_assessment', urlModel: 'findings-assessments' }],
+		foreignKeyFields: [
+			{ field: 'owner', urlModel: 'users' },
+			{ field: 'findings_assessment', urlModel: 'findings-assessments' },
+			{ field: 'vulnerabilities', urlModel: 'vulnerabilities' },
+			{ field: 'applied_controls', urlModel: 'applied-controls' },
+			{ field: 'perimeter', urlModel: 'perimeters' },
+			{ field: 'folder', urlModel: 'folders', urlParams: 'content_type=DO' },
+		],
 		// reverseForeignKeyFields: [
 		// 	{ field: 'findings', urlModel: 'vulnerabilities' },
 		// 	{ field: 'findings', urlModel: 'reference-controls' },

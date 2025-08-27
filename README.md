@@ -1,52 +1,110 @@
-
 <p align="center">
-Star the project 🌟 to get releases notification and help growing the community!
+  <img src="frontend/src/lib/assets/ciso.svg" alt="CISO Assistant Mitra Keluarga" width="400" height="150"/>
 </p>
 
 <p align="center">
-    <a href="https://trendshift.io/repositories/9343" target="_blank"><img src="https://trendshift.io/api/badge/repositories/9343" alt="intuitem%2Fciso-assistant-community | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
-    <br />
-    <a href="https://intuitem.com">intuitem.com</a>
-    ·
-    <a href="https://intuitem.com/trial">SaaS Free trial</a>
-    ·
-    <a href="https://roadmap.productboard.com/c483ebdf-87df-4dc2-96dc-a2e8c66aac63">Roadmap</a>
-    ·
-    <a href="https://intuitem.gitbook.io/ciso-assistant" target="_blank">Docs</a>
-    ·
-    <a href="#supported-languages-">Languages</a>
-    ·
-    <a href="https://discord.gg/qvkaMdQ8da">Discord</a>
-    ·
-    <a href="#supported-frameworks-">Frameworks</a>
-    <br />
-
+  <strong>CISO Assistant Mitra Keluarga - Production Environment</strong>
 </p>
 
-![](gh_banner.png)
+<p align="center">
+  <a href="https://gracia.mitrakeluarga.com:8443">🌐 Production Site</a>
+  ·
+  <a href="https://dev-gracia.mitrakeluarga.com:8443">🌐 Developer Site</a>
+  ·
+  <a href="mailto:it.security@mitrakeluarga.com">📧 IT Security</a>
+  ·
+  <a href="#status">📊 Status</a>
+</p>
 
-[![CodeFactor](https://www.codefactor.io/repository/github/intuitem/ciso-assistant-community/badge)](https://www.codefactor.io/repository/github/intuitem/ciso-assistant-community)
-[![API Tests](https://github.com/intuitem/ciso-assistant-community/actions/workflows/backend-api-tests.yml/badge.svg)](https://github.com/intuitem/ciso-assistant-community/actions/workflows/backend-api-tests.yml)
-[![Functional Tests](https://github.com/intuitem/ciso-assistant-community/actions/workflows/functional-tests.yml/badge.svg?branch=main)](https://github.com/intuitem/ciso-assistant-community/actions/workflows/functional-tests.yml)
-![GitHub Release](https://img.shields.io/github/v/release/intuitem/ciso-assistant-community)
-[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2Fab-smith%2Fciso-assistant-community.svg?type=small)](https://app.fossa.com/projects/git%2Bgithub.com%2Fab-smith%2Fciso-assistant-community?ref=badge_small)
+## Status Sistem
 
-CISO Assistant offers a fresh perspective on Cybersecurity Management and **GRC** (Governance, Risk, and Compliance) practices:
+![Production Status](https://img.shields.io/badge/Production-Online-brightgreen)
+![Environment](https://img.shields.io/badge/Environment-Production-red)
+![Version](https://img.shields.io/badge/Version-Latest-blue)
+![Security](https://img.shields.io/badge/Security-Enhanced-orange)
+![Email](https://img.shields.io/badge/Email-Configured-green)
 
-- Designed as a central hub to connect multiple cybersecurity concepts with smart linking between objects,
-- Built as a **multi-paradigm** tool that adapts to different backgrounds, methodologies, and expectations,
-- Explicitly **decouples** compliance from cybersecurity controls, enabling reusability across the platform,
-- Promotes **reusability** and interlinking instead of redundant work,
-- Developed with an **API-first** approach to support both UI interaction and external **automation**,
-- Comes packed with a wide range of built-in standards, security controls, and threat libraries,
-- Offers an **open format** to customize and reuse your own objects and frameworks,
-- Includes built-in **risk assessment** and **remediation tracking** workflows,
-- Supports custom frameworks via a simple syntax and flexible tooling,
-- Provides rich **import/export** capabilities across various channels and formats (UI, CLI, Kafka, reports, etc.).
+### Production Environment Details
+- **URL**: https://gracia.mitrakeluarga.com:8443
+- **Status**: ✅ Online
+- **Database**: PostgreSQL
+- **Email Service**: ✅ Configured
+- **SSL/TLS**: ✅ Enabled
+- **Backup**: ✅ Automated
+- **Monitoring**: ✅ Active
 
-Our vision is to create a **one-stop-shop** for cybersecurity management—modernizing GRC through **simplification** and **interoperability**.
+## Workflow dan Prosedur Penggunaan 📋
 
-As practitioners working with cybersecurity and IT professionals, we've faced the same issues: tool fragmentation, data duplication, and a lack of intuitive, integrated solutions. CISO Assistant was born from those lessons, and we're building a community around **pragmatic**, **common-sense** principles.
+### 1. Akses Sistem
+- Buka browser dan akses [https://agilciso.mitrakeluarga.com:8443](https://agilciso.mitrakeluarga.com:8443)
+- Login menggunakan kredensial yang telah diberikan oleh IT Security
+- Untuk development, gunakan [https://dev-gracia.mitrakeluarga.com:8443](https://dev-gracia.mitrakeluarga.com:8443)
+
+### 2. Dashboard Utama
+- Setelah login, Anda akan melihat dashboard dengan overview status compliance
+- Navigasi menu tersedia di sidebar kiri
+- Status assessment dan risk scenario ditampilkan dalam bentuk grafik
+
+### 3. Manajemen Framework
+- Pilih **Frameworks** dari menu untuk melihat framework compliance yang tersedia
+- Klik framework yang ingin digunakan (ISO 27001, NIST, dll)
+- Buat assessment baru dengan klik **Create Assessment**
+
+### 4. Risk Assessment
+- Akses menu **Risk Assessments** untuk membuat penilaian risiko
+- Tentukan scope dan perimeter assessment
+- Identifikasi aset, ancaman, dan kerentanan
+- Evaluasi tingkat risiko menggunakan risk matrix
+
+### 5. Compliance Assessment
+- Buka **Compliance Assessments** untuk audit compliance
+- Pilih framework yang sesuai dengan kebutuhan organisasi
+- Isi requirement assessment sesuai dengan implementasi kontrol
+- Upload evidence dan dokumentasi pendukung
+
+### 6. Applied Controls
+- Kelola kontrol keamanan di menu **Applied Controls**
+- Assign owner untuk setiap kontrol
+- Set timeline dan status implementasi
+- Track progress remediation
+
+### 7. Reporting
+- Generate laporan dari menu **Reports**
+- Pilih jenis laporan: Executive Summary, Detailed Assessment, atau Custom
+- Export dalam format PDF atau Excel
+- Schedule automated reporting jika diperlukan
+
+### 8. User Management (Admin)
+- Admin dapat mengelola user di menu **Users**
+- Assign role dan permission sesuai kebutuhan
+- Manage domain access dan folder permissions
+
+### 9. Backup dan Maintenance
+- Sistem melakukan backup otomatis setiap hari
+- Maintenance window dijadwalkan setiap minggu
+- Notifikasi akan dikirim via email untuk scheduled maintenance
+
+### 10. Support dan Bantuan
+- Untuk bantuan teknis, hubungi [it.security@mitrakeluarga.com](mailto:it.security@mitrakeluarga.com)
+- Dokumentasi lengkap tersedia di sistem
+- Training session dapat dijadwalkan sesuai kebutuhan
+
+CISO Assistant menawarkan perspektif baru dalam pengelolaan Cybersecurity dan praktik **GRC** (Governance, Risk, and Compliance):
+
+- Dirancang sebagai pusat penghubung untuk menghubungkan berbagai konsep cybersecurity dengan smart linking antar objek,
+- Dibangun sebagai tool **multi-paradigm** yang dapat beradaptasi dengan berbagai latar belakang, metodologi, dan ekspektasi,
+- Secara eksplisit **memisahkan** compliance dari cybersecurity controls, memungkinkan penggunaan kembali di seluruh platform,
+- Mendorong **penggunaan kembali** dan interkoneksi daripada pekerjaan yang berulang,
+- Dikembangkan dengan pendekatan **API-first** untuk mendukung interaksi UI dan **automation** eksternal,
+- Dilengkapi dengan berbagai standar built-in, security controls, dan threat libraries,
+- Menawarkan **format terbuka** untuk menyesuaikan dan menggunakan kembali objek dan frameworks Anda sendiri,
+- Menyertakan **risk assessment** dan **remediation tracking** workflows built-in,
+- Mendukung custom frameworks melalui syntax sederhana dan tooling yang fleksibel,
+- Menyediakan kemampuan **import/export** yang kaya melalui berbagai channel dan format (UI, CLI, Kafka, reports, dll.).
+
+Visi kami adalah menciptakan **solusi lengkap** untuk pengelolaan cybersecurity—memodernisasi GRC melalui **penyederhanaan** dan **interoperabilitas**.
+
+Sebagai praktisi yang bekerja dengan profesional cybersecurity dan IT, kami menghadapi masalah yang sama: fragmentasi tool, duplikasi data, dan kurangnya solusi yang intuitif dan terintegrasi. CISO Assistant lahir dari pembelajaran tersebut, dan kami membangun komunitas berdasarkan prinsip **pragmatis** dan **akal sehat**.
 
 We’re constantly evolving with input from users and customers. Like an octopus 🐙, CISO Assistant keeps growing extra arms—bringing clarity, automation, and productivity to cybersecurity teams while reducing the effort of data input and output.
 
@@ -89,38 +147,38 @@ Here is an illustration of the **decoupling** principle and its advantages:
 
 ![](./documentation/system-architecture.png)
 
-## Quick Start 🚀
+## Memulai Cepat 🚀
 
 > [!TIP]
-> The easiest way to get started is through the [free trial of cloud instance available here](https://intuitem.com/trial).
+> Cara termudah untuk memulai adalah melalui akses ke environment production di [https://gracia.mitrakeluarga.com:8443](https://gracia.mitrakeluarga.com:8443) atau development di [https://dev-gracia.mitrakeluarga.com:8443](https://dev-gracia.mitrakeluarga.com:8443).
 
-Alternatively, once you have _Docker_ and _Docker-compose_ installed, on your workstation or server:
+Alternatif lain, setelah Anda menginstall _Docker_ dan _Docker-compose_ di workstation atau server Anda:
 
-clone the repo:
+Clone repository:
 
 ```
-git clone --single-branch -b main https://github.com/intuitem/ciso-assistant-community.git
+git clone --single-branch -b master https://gitlab.mitrakeluarga.com/itsecurity/ciso-assistant.git
 ```
 
-and run the starter script
+dan jalankan script starter:
 
 ```sh
 ./docker-compose.sh
 ```
 
-If you are looking for other installation options for self-hosting, check the [config builder](./config/) and the [docs](https://intuitem.gitbook.io/ciso-assistant).
+Jika Anda mencari opsi instalasi lain untuk self-hosting, periksa [config builder](./config/) dan [dokumentasi](https://intuitem.gitbook.io/ciso-assistant).
 
 > [!NOTE]
-> The docker-compose script uses prebuilt Docker images supporting most of the standard hardware architecture.
-> If you're using **Windows**, Make sure to have [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) installed and trigger the script within a WSL command line. It will feed Docker Desktop on your behalf.
+> Script docker-compose menggunakan Docker images yang sudah dibangun sebelumnya dan mendukung sebagian besar arsitektur hardware standar.
+> Jika Anda menggunakan **Windows**, pastikan [WSL](https://learn.microsoft.com/en-us/windows/wsl/install) sudah terinstall dan jalankan script dalam command line WSL. Ini akan menggunakan Docker Desktop secara otomatis.
 
-The docker compose file can be adjusted to pass extra parameters to suit your setup (e.g. Mailer settings).
+File docker compose dapat disesuaikan untuk menambahkan parameter tambahan sesuai setup Anda (misalnya pengaturan Mailer).
 
 > [!WARNING]
-> If you're getting warnings or errors about image's platform not matching host platform, raise an issue with the details and we'll add it shortly after. You can also use `docker-compose-build.sh` instead (see below) to build for your specific architecture.
+> Jika Anda mendapat peringatan atau error tentang platform image yang tidak cocok dengan platform host, laporkan masalah tersebut dengan detail dan kami akan menambahkannya segera. Anda juga dapat menggunakan `docker-compose-build.sh` sebagai gantinya (lihat di bawah) untuk membangun sesuai arsitektur spesifik Anda.
 
 > [!CAUTION]
-> Don't use the `main` branch code directly for production as it's the merge upstream and can have breaking changes during our development. Either use the `tags` for stable versions or prebuilt images.
+> Jangan gunakan kode branch `main` secara langsung untuk production karena ini adalah merge upstream dan dapat memiliki perubahan yang merusak selama development kami. Gunakan `tags` untuk versi stabil atau prebuilt images.
 
 ## End-user Documentation
 
@@ -262,42 +320,42 @@ Join our [open Discord community](https://discord.gg/qvkaMdQ8da) to interact wit
 
 > The fastest and easiest way to get started is through the [free trial of cloud instance available here](https://intuitem.com/trial).
 
-## Testing locally 🚀
+## Menjalankan Secara Lokal 🚀
 
-To run CISO Assistant locally in a straightforward way, you can use Docker compose.
+Untuk menjalankan CISO Assistant secara lokal dengan cara yang mudah, Anda dapat menggunakan Docker compose.
 
 0. Update docker
 
-Make sure you have a recent version of docker (>= 27.0).
+Pastikan Anda memiliki versi docker yang terbaru (>= 27.0).
 
-1. Clone the repository
+1. Clone repository
 
 ```sh
-git clone --single-branch -b main https://github.com/intuitem/ciso-assistant-community.git
-cd ciso-assistant-community
+git clone --single-branch -b master https://gitlab.mitrakeluarga.com/itsecurity/ciso-assistant.git
+cd ciso-assistant
 ```
 
-2. Launch docker-compose script for prebuilt images:
+2. Jalankan script docker-compose untuk prebuilt images:
 
 ```sh
 ./docker-compose.sh
 ```
 
-_Alternatively_, you can use this variant to build the docker images for your specific architecture:
+_Alternatif lain_, Anda dapat menggunakan varian ini untuk membangun docker images sesuai arsitektur spesifik Anda:
 
 ```sh
 ./docker-compose-build.sh
 ```
 
-When asked for, enter your email and password for your superuser.
+Ketika diminta, masukkan email dan password untuk superuser Anda.
 
-You can then reach CISO Assistant using your web browser at [https://localhost:8443/](https://localhost:8443/)
+Anda kemudian dapat mengakses CISO Assistant menggunakan web browser di [https://localhost:8443/](https://localhost:8443/)
 
-For the following executions, use "docker compose up" directly.
+Untuk eksekusi selanjutnya, gunakan "docker compose up" secara langsung.
 
-## Setting up CISO Assistant for development
+## Menyiapkan CISO Assistant untuk Development
 
-### Requirements
+### Persyaratan
 
 - Python 3.12+
 - pip 20.3+
@@ -305,15 +363,15 @@ For the following executions, use "docker compose up" directly.
 - node 22+
 - npm 10.2+
 - pnpm 9.0+
-- yaml-cpp (brew install yaml-cpp libyaml or apt install libyaml-cpp-dev)
+- yaml-cpp (brew install yaml-cpp libyaml atau apt install libyaml-cpp-dev)
 
 ### Running the backend
 
-1. Clone the repository.
+1. Clone repository.
 
 ```sh
-git clone git@github.com:intuitem/ciso-assistant-community.git
-cd ciso-assistant-community
+git clone git@gitlab.mitrakeluarga.com:itsecurity/ciso-assistant.git
+cd ciso-assistant
 ```
 
 2. Create a file in the parent folder (e.g. ../myvars) and store your environment variables within it by copying and modifying the following code and replace `"<XXX>"` by your private values. Take care not to commit this file in your git repo.
@@ -327,16 +385,16 @@ All variables in the backend have handy default values.
 ```sh
 export DJANGO_DEBUG=True
 
-# Default url is set to http://localhost:5173 but you can change it, e.g. to use https with a caddy proxy
-export CISO_ASSISTANT_URL=https://localhost:8443
+# URL untuk development environment
+export CISO_ASSISTANT_URL=https://dev-gracia.mitrakeluarga.com:8443
 
-# Setup a development mailer with Mailhog for example
-export EMAIL_HOST_USER=''
-export EMAIL_HOST_PASSWORD=''
-export DEFAULT_FROM_EMAIL=ciso-assistant@ciso-assistantcloud.com
-export EMAIL_HOST=localhost
-export EMAIL_PORT=1025
+# Konfigurasi email production Mitra Keluarga
+export EMAIL_HOST=smtp.gmail.com
+export EMAIL_PORT=587
+export EMAIL_HOST_USER=it.security@mitrakeluarga.com
+export EMAIL_HOST_PASSWORD=<your_email_password>
 export EMAIL_USE_TLS=True
+export DEFAULT_FROM_EMAIL=it.security@mitrakeluarga.com
 ```
 
 **Other variables**
@@ -562,13 +620,7 @@ Set DJANGO_DEBUG=False for security reason.
 - DA: Danish
 - HU: Hungarian
 
-## Contributors 🤝
-
-<a href="https://github.com/intuitem/ciso-assistant-community/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=intuitem/ciso-assistant-community&columns=9" />
-</a>
-
-## Built With 💜
+## Built With 💜g
 
 - [Django](https://www.djangoproject.com/) - Python Web Development Framework
 - [SvelteKit](https://kit.svelte.dev/) - Frontend Framework

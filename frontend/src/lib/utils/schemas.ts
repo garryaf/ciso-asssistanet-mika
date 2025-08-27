@@ -169,8 +169,7 @@ export const AppliedControlSchema = z.object({
 	owner: z.string().uuid().optional().array().optional(),
 	security_exceptions: z.string().uuid().optional().array().optional(),
 	progress_field: z.number().optional().default(0),
-	filtering_labels: z.string().optional().array().optional(),
-	findings: z.string().uuid().optional().array().optional()
+	filtering_labels: z.string().optional().array().optional()
 });
 
 export const AppliedControlDuplicateSchema = z.object({

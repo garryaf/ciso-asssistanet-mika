@@ -164,8 +164,8 @@ if USE_S3:
     AWS_S3_FILE_OVERWRITE = False
 
 else:
-    MEDIA_ROOT = LOCAL_STORAGE_DIRECTORY
-    MEDIA_URL = ""
+    MEDIA_ROOT = "/code/media"
+    MEDIA_URL = "/media/"
 
 PAGINATE_BY = int(os.environ.get("PAGINATE_BY", default=5000))
 

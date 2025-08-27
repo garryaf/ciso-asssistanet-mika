@@ -7,8 +7,9 @@ services:
     environment:
       POSTGRES_DB: ciso_assistant
       POSTGRES_USER: ciso_assistant
-      POSTGRES_PASSWORD: ciso_assistant
-    volumes:
+
+      POSTGRES_PASSWORD: Bernat1234*
+    volumes: 
       - ./db/pg:/var/lib/postgresql/data
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U ciso_assistant -d ciso_assistant"]
@@ -18,6 +19,8 @@ services:
       start_period: 30s
   backend:
     container_name: backend
+    build:
+      context: /data/compose/ciso-assistant-prod/backend
     image: ghcr.io/intuitem/ciso-assistant-community/backend:latest
     pull_policy: always
     restart: always
@@ -25,16 +28,25 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      - ALLOWED_HOSTS=backend,localhost,agilciso.mitrakeluarga.com
-      - CISO_ASSISTANT_URL=https://agilciso.mitrakeluarga.com:8443
+      - ALLOWED_HOSTS=backend,localhost,gracia.mitrakeluarga.com
+      - CISO_ASSISTANT_URL=https://gracia.mitrakeluarga.com:8443
       - DJANGO_DEBUG=False
       - AUTH_TOKEN_TTL=7200
       - POSTGRES_NAME=ciso_assistant
       - POSTGRES_USER=ciso_assistant
-      - POSTGRES_PASSWORD=ciso_assistant
+      - POSTGRES_PASSWORD=Bernat1234*
       - DB_HOST=postgres
+      - EMAIL_HOST=smtp.office365.com
+      - EMAIL_PORT=587
+      - EMAIL_USE_TLS=True
+      - EMAIL_HOST_USER=garry.afrialdy@mitrakeluarga.com
+      - EMAIL_HOST_PASSWORD=fhjdqlvrxvnjrnbs
+      - DEFAULT_FROM_EMAIL=awareness@mitrakeluarga.com
+      - MEDIA_ROOT=/code/media
+      - MEDIA_URL=/media
     volumes:
       - ./db:/code/db
+      - /data/compose/upload:/code/media
     healthcheck:
       test: ["CMD-SHELL", "curl -f http://backend:8000/api/build || exit 1"]
       interval: 10s
@@ -51,15 +63,25 @@ services:
     restart: always
     environment:
       - ALLOWED_HOSTS=backend,localhost
-      - CISO_ASSISTANT_URL=https://agilciso.mitrakeluarga.com:8443
+      - CISO_ASSISTANT_URL=https://gracia.mitrakeluarga.com:8443
       - DJANGO_DEBUG=False
       - AUTH_TOKEN_TTL=7200
       - POSTGRES_NAME=ciso_assistant
       - POSTGRES_USER=ciso_assistant
-      - POSTGRES_PASSWORD=ciso_assistant
+
+      - POSTGRES_PASSWORD=Bernat1234*
+
       - DB_HOST=postgres
+
+      - EMAIL_HOST=smtp.office365.com
+      - EMAIL_PORT=587
+      - EMAIL_USE_TLS=True
+      - EMAIL_HOST_USER=garry.afrialdy@mitrakeluarga.com
+      - EMAIL_HOST_PASSWORD=fhjdqlvrxvnjrnbs
+      - DEFAULT_FROM_EMAIL=awareness@mitrakeluarga.com
     volumes:
       - ./db:/code/db
+      - /data/compose/upload
     entrypoint:
       - /bin/sh
       - -c
@@ -68,10 +90,10 @@ services:
   frontend:
     container_name: frontend
     build:
-      context: /home/m23070482/31.Ciso/ciso-assistant-community/frontend
+      context: /data/compose/ciso-assistant-prod/frontend
     environment:
       - PUBLIC_BACKEND_API_URL=http://backend:8000/api
-      - PUBLIC_BACKEND_API_EXPOSED_URL=https://agilciso.mitrakeluarga.com:8443/api
+      - PUBLIC_BACKEND_API_EXPOSED_URL=https://gracia.mitrakeluarga.com:8443/api
       - PROTOCOL_HEADER=x-forwarded-proto
       - HOST_HEADER=x-forwarded-host
     image: ghcr.io/intuitem/ciso-assistant-community/frontend:latest
@@ -83,7 +105,7 @@ services:
     container_name: caddy
     image: caddy:2.8.4
     environment:
-      - CISO_ASSISTANT_URL=https://agilciso.mitrakeluarga.com:8443
+      - CISO_ASSISTANT_URL=https://gracia.mitrakeluarga.com:8443
     depends_on:
       backend:
         condition: service_healthy
@@ -92,9 +114,11 @@ services:
       - 8443:8443
     volumes:
       - ./caddy_data:/data
+      - /home/itsec/2025/startmitrakeluargadotcom.pem:/etc/caddy/cert.pem:ro
+      - /home/itsec/2025/commercial.key:/etc/caddy/key.pem:ro
     command: |
       sh -c 'echo $$CISO_ASSISTANT_URL "{
       reverse_proxy /api/* backend:8000
       reverse_proxy /* frontend:3000
-      tls internal
+      tls /etc/caddy/cert.pem /etc/caddy/key.pem
       }" > Caddyfile && caddy run'
