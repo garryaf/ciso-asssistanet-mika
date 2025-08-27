@@ -6,9 +6,9 @@ services:
     restart: always
     environment:
       POSTGRES_DB: ciso_assistant
-      POSTGRES_USER: ciso_assistant
+      POSTGRES_USER: 
 
-      POSTGRES_PASSWORD: Bernat1234*
+      POSTGRES_PASSWORD:
     volumes: 
       - ./db/pg:/var/lib/postgresql/data
     healthcheck:
@@ -28,20 +28,20 @@ services:
       postgres:
         condition: service_healthy
     environment:
-      - ALLOWED_HOSTS=backend,localhost,gracia.mitrakeluarga.com
-      - CISO_ASSISTANT_URL=https://gracia.mitrakeluarga.com:8443
+      - ALLOWED_HOSTS=backend,localhost,
+      - CISO_ASSISTANT_URL=https://
       - DJANGO_DEBUG=False
       - AUTH_TOKEN_TTL=7200
       - POSTGRES_NAME=ciso_assistant
-      - POSTGRES_USER=ciso_assistant
-      - POSTGRES_PASSWORD=Bernat1234*
+      - POSTGRES_USER=
+      - POSTGRES_PASSWORD=
       - DB_HOST=postgres
-      - EMAIL_HOST=smtp.office365.com
+      - EMAIL_HOST=
       - EMAIL_PORT=587
       - EMAIL_USE_TLS=True
       - EMAIL_HOST_USER=
       - EMAIL_HOST_PASSWORD=
-      - DEFAULT_FROM_EMAIL=awareness@mitrakeluarga.com
+      - DEFAULT_FROM_EMAIL=
       - MEDIA_ROOT=/code/media
       - MEDIA_URL=/media
     volumes:
@@ -67,18 +67,18 @@ services:
       - DJANGO_DEBUG=False
       - AUTH_TOKEN_TTL=7200
       - POSTGRES_NAME=ciso_assistant
-      - POSTGRES_USER=ciso_assistant
+      - POSTGRES_USER=
 
-      - POSTGRES_PASSWORD=Bernat1234*
+      - POSTGRES_PASSWORD=
 
       - DB_HOST=postgres
 
-      - EMAIL_HOST=smtp.office365.com
+      - EMAIL_HOST=
       - EMAIL_PORT=587
       - EMAIL_USE_TLS=True
-      - EMAIL_HOST_USER=garry.afrialdy@mitrakeluarga.com
-      - EMAIL_HOST_PASSWORD=fhjdqlvrxvnjrnbs
-      - DEFAULT_FROM_EMAIL=awareness@mitrakeluarga.com
+      - EMAIL_HOST_USER=
+      - EMAIL_HOST_PASSWORD=
+      - DEFAULT_FROM_EMAIL=
     volumes:
       - ./db:/code/db
       - /data/compose/upload
